@@ -26,7 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/users', userRouter); // connects the router to the server
 app.use('/carts', cartRouter);
 app.use('/auth', authRouter);
-app.use('/products',productRouter);
+app.use('/products', productRouter);
 
 app.get('/ping', isLoggedIn, (req, res) => {
     // controller
