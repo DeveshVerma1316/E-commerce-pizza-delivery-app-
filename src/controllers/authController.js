@@ -20,7 +20,7 @@ async function login(req, res) {
             error: {}
         })
     } catch(error) {
-        return res.status(error.statusCode || 500).json({
+        return res.status(error.statusCode).json({
             success: false,
             data: {},
             message: error.message,

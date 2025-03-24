@@ -17,7 +17,6 @@ const cloudinary = require('../config/cloudinaryConfig');
              await fs.unlink(process.cwd() + "/" + imagePath);
          } catch(error) {
              console.log(error);
-             
              throw new InternalServerError();
          }
  
@@ -28,11 +27,12 @@ const cloudinary = require('../config/cloudinaryConfig');
          ...productDetails,
          productImage: productImage
      });
+ 
      console.log(product);
-         
+ 
      return product;
  
-    
+ 
  }
  
  async function getProductById(productId) {
@@ -52,8 +52,7 @@ const cloudinary = require('../config/cloudinaryConfig');
  
  
  module.exports = {
-     
      createProduct,
      getProductById,
      deleteProductById
- }
+}

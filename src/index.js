@@ -1,5 +1,5 @@
 const express = require('express');
-
+const cookieParser = require('cookie-parser');
 
 const ServerConfig = require('./config/serverConfig');
 const connectDB = require('./config/dbConfig');
@@ -9,7 +9,6 @@ const authRouter = require('./routes/authRoute');
 const { isLoggedIn } = require('./validation/authValidator');
 const uploader = require('./middlewares/multerMiddleware');
 const cloudinary = require('./config/cloudinaryConfig');
-const cookieParser = require("cookie-parser");
 const fs = require('fs/promises');
 const productRouter = require('./routes/productRoute');
 // const User = require('./schema/userSchema');
