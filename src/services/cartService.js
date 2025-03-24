@@ -1,4 +1,4 @@
-const { getCartByUserId } = require("../repositories/cartRepository");
+const { getCartByUserId, clearCart } = require("../repositories/cartRepository");
  const { getProductById } = require("../repositories/productRepository");
  const AppError = require("../utils/appError");
  const BadRequestError = require("../utils/badRequestError");
@@ -45,7 +45,7 @@ const { getCartByUserId } = require("../repositories/cartRepository");
                  else 
                      throw new AppError("The quantity of the item requested is not available", 404);
              }
-             
+ 
              foundProduct = true;
          }
      });
@@ -67,8 +67,14 @@ const { getCartByUserId } = require("../repositories/cartRepository");
  
  }
  
+ async function clearProductsFromCart(userId) {
+     const response = await clearCart(userId);
+     return response;
+ }
+ 
  module.exports = {
-     
      getCart,
-     modifyCart
+     
+     modifyCart,
+     clearProductsFromCart
  }
