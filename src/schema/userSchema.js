@@ -43,6 +43,9 @@ const mongoose = require('mongoose');
          type: String,
          enum: ["USER", "ADMIN"],
          default: "USER"
+     },
+     address:{
+        type:String
      }
  }, {
      timestamps: true
