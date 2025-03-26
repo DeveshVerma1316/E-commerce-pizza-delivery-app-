@@ -1,6 +1,6 @@
 const { findUser, createUser } = require("../repositories/userRepository");
  const { createcart } = require('../repositories/cartRepository');
- 
+ const { getOrdersByUserId } = require("../repositories/orderRepository");
  async function registerUser(userDetails) {
      console.log("Hitting service layer")
      // It will create a brand new user in the db
