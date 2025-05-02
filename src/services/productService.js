@@ -41,7 +41,18 @@ const cloudinary = require('../config/cloudinaryConfig');
          throw new NotFoundError('Product');
      }
      return response;
- }
+ 
+ 
+    }
+    async function getAllProductsData() {
+        const response = await ProductRespository.getAllProducts();
+        if(!response) {
+            throw new NotFoundError('Product');
+        }
+        return response;
+    }
+
+
  async function deleteProductById(productId) {
      const response = await ProductRespository.deleteProductById(productId);
      if(!response) {
@@ -54,5 +65,6 @@ const cloudinary = require('../config/cloudinaryConfig');
  module.exports = {
      createProduct,
      getProductById,
+     getAllProductsData,
      deleteProductById
 }

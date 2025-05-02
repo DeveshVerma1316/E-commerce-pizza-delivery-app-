@@ -1,4 +1,4 @@
-const { createOrder, updateOrder, getAllOrdersCreatedByUser, getOrderDetailsById, getOrdersByUserId  } = require("../services/orderService");
+const { createOrder, updateOrder, getAllOrdersCreatedByUser, getOrderDetailsById,   } = require("../services/orderService");
  const AppError = require("../utils/appError");
  
  async function createNewOrder(req, res) {
